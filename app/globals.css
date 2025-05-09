@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+@import "tailwindcss";
+
+body {
+  background-color: black;
+  color: white;
+}
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+::selection {
+  color: #00e1ff;
+  background: rgba(59, 59, 59, 0.5);
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: #00e1ff;
+  background: rgba(59, 59, 59, 0.5);
+}
+
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;              /* fullscreen */
+  overflow: hidden;
+}
+
+.video-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;                   /* top/right/bottom/left = 0 */
+  pointer-events: none;
+  background-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.5) 0%,    /* dark center if you like */
+    rgba(0, 0, 0, 0.7) 70%,   /* stronger near edges */
+    rgba(0, 0, 0, 1) 100%     /* fully black at the very edges */
+  );
+  mix-blend-mode: multiply;   /* blend for smoother result */
+  z-index: 1;
+}
+
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;          /* crop to fill */
+  z-index: 0;
+  opacity: 0.8;               /* adjust overall lightness */
+}
+
+
+
+
+
+.playfair-display-si {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
