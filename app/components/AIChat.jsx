@@ -48,8 +48,9 @@ export default function AIChat() {
     <div className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50">
       {/* Toggle Button */}
       <button
+      title='Personal AI Assistant'
         onClick={toggleChat}
-        className={`${isOpen ? 'invisible opacity-0' : 'visible opacity-100'} transition-all duration-300 bg-gradient-to-br from-gray-900 to-black p-4 rounded-full shadow-2xl hover:scale-105 active:scale-95`}
+        className={`${isOpen ? 'invisible opacity-0' : 'visible opacity-100'} transition-all duration-300 bg-gradient-to-br from-gray-900 to-black p-4 rounded-full shadow-2xl hover:scale-105 active:scale-95 cursor-pointer`}
       >
         <FaRobot className="w-8 h-8 text-white" />
       </button>
@@ -65,12 +66,12 @@ export default function AIChat() {
         {/* Header */}
         <div className="flex items-center justify-between p-4 bg-gray-800 rounded-t-xl border-b border-gray-700">
           <div className="flex items-center gap-3">
-            <SiAwslambda className="w-6 h-6" />
+            <SiAwslambda className="w-6 h-6 cursor-pointer" />
             <h2 className="text-lg font-semibold text-white">Lambda AI</h2>
           </div>
           <button
             onClick={toggleChat}
-            className="p-2 text-gray-400 rounded-lg hover:bg-gray-700 transition-colors"
+            className="p-2 text-gray-400 rounded-lg hover:bg-gray-700 transition-colors cursor-pointer"
           >
             <FaTimes className="w-5 h-5" />
           </button>
@@ -115,13 +116,13 @@ export default function AIChat() {
             <button
               onClick={handleSend}
               disabled= {loading}
-              className="p-3 text-white bg-black rounded-lg hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-300"
+              className="p-3 text-white bg-black rounded-lg hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-300 cursor-pointer"
             >
               {loading ? (<TbFidgetSpinner className='w-5 h-5 animate-spin' />): (<FaPaperPlane className="w-5 h-5" />)}
             </button>
           </div>
           <p className="mt-2 text-xs text-center text-gray-400">
-            Responses powered by Gemini
+            Responses powered by <strong>Gemini</strong>
           </p>
         </div>
       </div>
