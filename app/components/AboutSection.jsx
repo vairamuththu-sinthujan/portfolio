@@ -152,14 +152,12 @@ const AboutSection = () => {
                     <li ref={addToInterestRefs}>UI/UX Design</li>
                 </ul>
                 <div className='sm:hidden flex-1 overflow-hidden'>
-                    <Image 
-                      ref={imageRef}
-                      src={'/about_1.jpg'} 
-                      alt={'about'} 
-                      width={200} 
-                      height={200} 
-                      className='opacity-80'
-                      priority={true}
+                    <Image
+                        src="/about_1.jpg"
+                        alt="about"
+                        width={400}
+                        height={400}
+                        className="your-classes w-auto h-auto"
                     />
                 </div>
             </div>

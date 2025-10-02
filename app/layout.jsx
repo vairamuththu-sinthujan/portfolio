@@ -11,7 +11,7 @@ const playfair = Playfair_Display({
 })
 
 
-export const metadata = {
+export let metadata = {
   title: "sinthujan",
   description: "personal portfolio",
   icons: [{
@@ -21,7 +21,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${playfair.className} scroll-smooth`}>
+    <html lang="en" suppressHydrationWarning className={`${playfair.className} scroll-smooth`} data-scroll-behavior="smooth">
       <body
         className={`${playfair.className} antialiased`}
       >

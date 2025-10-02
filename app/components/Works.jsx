@@ -36,7 +36,7 @@ const Works = () => {
     };
     
     // Initialize all animations
-    const initializeAnimations = (gsap, ScrollTrigger) => {
+    const initializeAnimations = (gsap, _) => {
       // Safety check for refs - only run animations if elements exist
       if (!sectionRef.current) return;
       
@@ -171,28 +171,28 @@ const Works = () => {
       if (projectTitles && projectTitles.length) {
         projectTitles.forEach(title => {
           // Create hover animation contexts to avoid animation conflicts
-          let titleContext = gsap.context(() => {
-            title.addEventListener('mouseenter', () => {
-              gsap.to(title, { 
-                scale: 1.01, 
-                duration: 0.3, 
-                ease: "power2.out",
-                transformOrigin: "left center"
-              });
+            gsap.context(() => {
+                title.addEventListener('mouseenter', () => {
+                    gsap.to(title, {
+                        scale: 1.01,
+                        duration: 0.3,
+                        ease: "power2.out",
+                        transformOrigin: "left center"
+                    });
+                });
+
+                title.addEventListener('mouseleave', () => {
+                    gsap.to(title, {
+                        scale: 1,
+                        duration: 0.3,
+                        ease: "power2.out"
+                    });
+                });
             });
-            
-            title.addEventListener('mouseleave', () => {
-              gsap.to(title, { 
-                scale: 1, 
-                duration: 0.3, 
-                ease: "power2.out" 
-              });
-            });
-          });
         });
       }
-      
-      // For link arrows
+
+        // For link arrows
       const projectLinks = document.querySelectorAll('.project-link');
       
       if (projectLinks && projectLinks.length) {
@@ -201,30 +201,30 @@ const Works = () => {
           if (!arrow) return;
           
           // Create hover animation contexts to avoid animation conflicts
-          let linkContext = gsap.context(() => {
-            link.addEventListener('mouseenter', () => {
-              gsap.to(arrow, { 
-                x: 3, 
-                duration: 0.2, 
-                ease: "power1.out" 
-              });
+            gsap.context(() => {
+                link.addEventListener('mouseenter', () => {
+                    gsap.to(arrow, {
+                        x: 3,
+                        duration: 0.2,
+                        ease: "power1.out"
+                    });
+                });
+
+                link.addEventListener('mouseleave', () => {
+                    gsap.to(arrow, {
+                        x: 0,
+                        duration: 0.2,
+                        ease: "power1.out"
+                    });
+                });
             });
-            
-            link.addEventListener('mouseleave', () => {
-              gsap.to(arrow, { 
-                x: 0, 
-                duration: 0.2, 
-                ease: "power1.out" 
-              });
-            });
-          });
         });
       }
     };
     
     // Load GSAP only in browser environment
     if (typeof window !== 'undefined') {
-      loadGSAP();
+      loadGSAP().then(r => r);
     }
     
     // Cleanup function

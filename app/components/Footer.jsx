@@ -1,41 +1,10 @@
-'use client'
 import Image from 'next/image'
-import React, { useRef, useEffect } from 'react'
-import { Dancing_Script } from 'next/font/google'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { FaBluesky } from 'react-icons/fa6'
-import { gsap } from 'gsap'
-
-const dancingScript = Dancing_Script({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  style: ['normal'],
-  display: 'swap',
-})
-
 const Footer = () => {
-  const footerRef = useRef(null)
-
-  useEffect(() => {
-    if (!footerRef.current) return
-    const ctx = gsap.context(() => {
-      const items = gsap.utils.toArray('.footer-item')
-      items.forEach((item, i) => {
-        gsap.from(item, {
-          opacity: 0,
-          y: 20,
-          duration: 0.6,
-          delay: i * 0.2,
-          ease: 'power2.out',
-        })
-      })
-    }, footerRef)
-
-    return () => ctx.revert()
-  }, [])
 
   return (
-    <footer ref={footerRef} id='contact' className='flex flex-col gap-4'>
+    <footer id='contact' className='flex flex-col gap-4'>
       <main className='flex flex-col sm:flex-row justify-between gap-5 sm:gap-10'>
         <section className='footer-item'>
           <div className='flex flex-col gap-5 h-auto w-auto overflow-hidden'>
@@ -74,7 +43,7 @@ const Footer = () => {
           </a>
           <div className='footer-item flex flex-row justify-between items-center'>
             <div className='flex flex-col gap-1'>
-              <h1 className={`${dancingScript.className} text-5xl`}>sinthujan</h1>
+              <h1 className={`text-5xl`}>sinthujan</h1>
               <p className='text-sm'>Full Stack Developer</p>
             </div>
             <div className='flex flex-col justify-center gap-1'>
