@@ -59,7 +59,7 @@ const NavBar = () => {
                                 style={{ animationDelay: '100ms' }}
                             >
                                 <Link
-                                    href="/#home"
+                                    href="#home"
                                     className="inline-block"
                                     onClick={openMenu}
                                 >
@@ -72,7 +72,7 @@ const NavBar = () => {
                                 style={{ animationDelay: '200ms' }}
                             >
                                 <Link
-                                    href="/#about"
+                                    href="#about"
                                     className="inline-block"
                                     onClick={openMenu}
                                 >
@@ -85,7 +85,7 @@ const NavBar = () => {
                                 style={{ animationDelay: '300ms' }}
                             >
                                 <Link
-                                    href="/#works"
+                                    href="#works"
                                     className="inline-block"
                                     onClick={openMenu}
                                 >
@@ -98,7 +98,7 @@ const NavBar = () => {
                                 style={{ animationDelay: '400ms' }}
                             >
                                 <Link
-                                    href="/#skills"
+                                    href="#skills"
                                     className="inline-block"
                                     onClick={openMenu}
                                 >
@@ -124,7 +124,7 @@ const NavBar = () => {
                                 style={{ animationDelay: '600ms' }}
                             >
                                 <Link
-                                    href="/#contact"
+                                    href="#contact"
                                     className="inline-block"
                                     onClick={openMenu}
                                 >

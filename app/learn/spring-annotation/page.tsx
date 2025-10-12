@@ -1,4 +1,4 @@
-import SpringBootAnnotations from "../../components/learn/SpringBootAnnotations";
+import SpringBootAnnotations from "../../components/learn/concepts/SpringBootAnnotations";
 import {Metadata} from "next";
 
 // app/page.js

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import "tailwindcss";
 
+
 body {
   background-color: black;
   color: white;
@@ -68,4 +69,43 @@ body {
   font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
+}
+
+
+
+/* globals.css */
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(34, 211, 238, 0.3),
+        inset 0 0 20px rgba(34, 211, 238, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(34, 211, 238, 0.6),
+        inset 0 0 30px rgba(34, 211, 238, 0.2);
+    }
+}
+
+.neon-cursor {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(34, 211, 238, 0.8),
+        0 0 20px rgba(34, 211, 238, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(34, 211, 238, 1),
+        0 0 30px rgba(34, 211, 238, 0.6);
+    }
+}
+
+.neon-cursor-dot {
+    animation: dotPulse 2s ease-in-out infinite;
+}
+
+/* Hide default cursor globally */
+* {
+    cursor: none;
 }

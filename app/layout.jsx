@@ -1,5 +1,6 @@
 import {  Playfair_Display } from "next/font/google";
 import "./globals.css";
+import NeonCursor from "./components/custom-cursor/NeonCursor";
 
 
 
@@ -19,12 +20,14 @@ export let metadata = {
   }]
 };
 
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning className={`${playfair.className} scroll-smooth`} data-scroll-behavior="smooth">
       <body
         className={`${playfair.className} antialiased`}
       >
+      <NeonCursor/>
         {children}
       </body>
     </html>

@@ -2,8 +2,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { FaRobot, FaTimes, FaPaperPlane } from 'react-icons/fa';
 import { SiAwslambda } from "react-icons/si";
-import { handleAIChat } from '../libs/gemini-helper'
 import { TbFidgetSpinner } from "react-icons/tb";
+import {handleAIChat} from "../libs/gemini-helper";
 
 export default function AIChat() {
   const [isOpen, setIsOpen] = useState(false);

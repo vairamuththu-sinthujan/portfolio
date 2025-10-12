@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar";
 import Skills from "./components/Skills";
 import Works from "./components/Works";
 
+
 export default function Home() {
   return (
     <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 overflow-hidden">
